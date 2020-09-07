@@ -1,9 +1,14 @@
-# Install missing gems
+# Installation
+
+## Install missing gems
 
 `bundle install`
 
-# Populate .env with Contentful SPACE_ID and TOKEN
+## Populate .env
 
-# Run app (tested with ruby 2.6.0)
+Set your Contentful SPACE_ID and TOKEN
+
+# Running
+## Run app (tested with ruby 2.6.0)
 
 `ruby app.rb`
