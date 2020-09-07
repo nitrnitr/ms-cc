@@ -5,11 +5,11 @@
       <div class="card-body">
         <h5 class="card-title"><%= @recipe.title %></h5>
         <p class="card-text"><%= @recipe.description %></p>
-        <% if @recipe.respond_to? :tags %>
-          <p>Tags: <%= @recipe.tags.map { |tag| tag.name.capitalize }.join(", ") %></p>
+        <% if @recipe.has_tags? %>
+          <p>Tags: <%= @recipe.joined_tags %></p>
         <% end %>
-        <% if @recipe.respond_to? :chef %>
-          <p>Chef name: <%= @recipe.chef.name %></p>
+        <% if @recipe.has_chef_name? %>
+          <p>Chef name: <%= @recipe.chef_name %></p>
         <% end %>
         <a href="/" class="btn btn-primary">Back to listing</a>
       </div>
