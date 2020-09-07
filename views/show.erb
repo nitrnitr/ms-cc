@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div class="card" style="width: 45rem;">
+      <img class="card-img-top" src="https:<%= @recipe.photo.url %>?w=650&h=650">
+      <div class="card-body">
+        <h5 class="card-title"><%= @recipe.title %></h5>
+        <p class="card-text"><%= @recipe.description %></p>
+        <% if @recipe.respond_to? :tags %>
+          <p>Tags: <%= @recipe.tags.map { |tag| tag.name.capitalize }.join(", ") %></p>
+        <% end %>
+        <% if @recipe.respond_to? :chef %>
+          <p>Chef name: <%= @recipe.chef.name %></p>
+        <% end %>
+        <a href="/" class="btn btn-primary">Back to listing</a>
+      </div>
+    </div>
+  </div>
+</div>

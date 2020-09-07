@@ -1,0 +1,21 @@
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Image</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= recipe.title %></td>
+          <td><img src="https:<%= recipe.photo.url %>?w=100&h=100"</td>
+          <td><a href=<%= "/recipes/#{recipe.id}" %>>Show</a></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
