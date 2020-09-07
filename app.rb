@@ -12,5 +12,10 @@ end
 
 get "/recipes/:id" do
   @recipe = consumer.recipe(params[:id])
-  erb :show, recipe: @recipe
+  if @recipe
+    erb :show, recipe: @recipe
+  else
+    status 404
+    erb :not_found
+  end
 end
